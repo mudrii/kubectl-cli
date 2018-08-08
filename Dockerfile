@@ -2,7 +2,7 @@ FROM alpine:latest
 
 # Kubectl version https://github.com/kubernetes/kubernetes/releases
 
-ENV KUBE_VERSION v1.11.0
+ENV KUBE_VERSION v1.11.2
 
 RUN apk --no-cache update && \
     apk --no-cache add \
