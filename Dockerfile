@@ -1,7 +1,10 @@
 FROM alpine:latest
 
-# Kubectl version https://github.com/kubernetes/kubernetes/releases
+RUN deluser guest ; delgroup users
+RUN addgroup -g 985 -S users
+RUN adduser -S -G users -u 1000 -s /bin/sh -h /home/mudrii mudrii
 
+# Kubectl version https://github.com/kubernetes/kubernetes/releases
 ENV KUBE_VERSION v1.11.2
 
 RUN apk --no-cache update && \
@@ -13,3 +16,5 @@ RUN apk --no-cache update && \
     chmod +x /usr/local/bin/kubectl && \
     apk --purge del curl && \
     rm /var/cache/apk/*
+
+USER mudrii
