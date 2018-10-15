@@ -14,7 +14,6 @@ RUN apk --no-cache update && \
     jq && \
     curl https://storage.googleapis.com/kubernetes-release/release/${KUBE_VERSION}/bin/linux/amd64/kubectl --output /usr/local/bin/kubectl && \
     chmod +x /usr/local/bin/kubectl && \
-    apk --purge del curl && \
-    rm /var/cache/apk/*
+    apk --purge del curl
 
 USER mudrii
