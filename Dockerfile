@@ -5,7 +5,7 @@ RUN addgroup -g 985 -S users
 RUN adduser -S -G users -u 1000 -s /bin/sh -h /home/mudrii mudrii
 
 # Kubectl version https://github.com/kubernetes/kubernetes/releases
-ENV KUBE_VERSION v1.11.2
+ENV KUBE_VERSION v1.12.0
 
 RUN apk --no-cache update && \
     apk --no-cache add \
